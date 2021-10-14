@@ -65,7 +65,7 @@ void Client::main() {
 	}
 	catch (std::exception&) {
 		throw std::exception(SERVER_INFO_ERR);
-	}	
+	}
 	op_t desired_res = ERR_RES;
 	while (true) {
 		try {
@@ -77,6 +77,7 @@ void Client::main() {
 			}
 			catch (std::exception& e) {
 				std::cout << e.what() << std::endl;
+				std::cout << TER_MSG << std::endl;
 				exit(1);
 			}
 			desired_res = sender->run(choice);
